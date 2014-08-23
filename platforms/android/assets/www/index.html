@@ -23,12 +23,6 @@
 	<script type="text/javascript" src="assets/js/plugins/angular-google-maps/angular-google-maps.min.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/angular-local-storage/angular-local-storage.min.js"></script>
 	<script type="text/javascript" src="assets/js/scripts.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
-    <script src="js/jquery.js"></script>
-    <script type="text/javascript"> $('select').selectpicker();
-        $('select').selectpicker();
-        $('.selectpicker').selectpicker('render');
-        </script>
 
 	<link rel="stylesheet" href="assets/css/app.min.css"/>
     <link rel="stylesheet" href="css/font-awesome.min.css"/>
@@ -36,52 +30,6 @@
     <link rel="stylesheet" href="css/bootstrap-select.min.css"/>
     
     <style>
-    
-    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-    padding-right: 0px;
-    white-space:nowrap;
-    overflow: hidden;
-    -o-text-overflow: ellipsis; /* pour Opera 9 */
-    text-overflow: ellipsis; /* pour le reste du monde */
-    }
-    
-    .cart{
-    border-bottom: 2px solid #FEFEFE;
-    position: relative;
-    z-index: 1;
-    }
-    
-    .cart{
-        border-bottom: 2px solid #FEFEFE;
-        position: relative;
-        z-index: 1;
-        overflow: hidden;
-    }
-    
-    .cart .bg {
-        position: absolute;
-        z-index: -1;
-        vertical-align:middle;
-        
-        opacity: .3;
-        width: 100%;
-    }
-    
-    .cart .bh {
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        
-        opacity: .7;
-        width: 100%;
-        height: 100%;
-    }
-    .bh{
-        position: absolute;
-    }
     
     
     .styled select {
@@ -110,19 +58,19 @@
 	
 	<header>
    
-   
-   <div class="row primarybar">
-       <a href="#/" class="col-xs-3" ng-class="{ here: isActive('/')}"> <i class="fa fa-home"></i> </a>
-       <a href="#/sites" class="col-xs-2" ng-class="{ here: isActive('/sites')}"> <i class="fa fa-bars"></i> </a>
-       <a href="#/lines" class="col-xs-2" ng-class="{ here: isActive('/lines')}"> <i class="fa fa-th"></i> </a>
-       <a href="#/help" class="col-xs-2 pull-right" ng-class="{ here: isActive('/help')}"> <i class="fa fa-exclamation-circle"></i> </a>
-   </div>
+
    
 	</header>
+    <div class="row primarybar">
+        <a href="#/" class="col-xs-3" ng-class="{ here: isActive('/')}"> <i class="fa fa-home"></i> </a>
+        <a href="#/sites" class="col-xs-2" ng-class="{ here: isActive('/sites')}"> <i class="fa fa-bars"></i> </a>
+        <a href="#/lines" class="col-xs-2" ng-class="{ here: isActive('/lines')}"> <i class="fa fa-th"></i> </a>
+        <a href="#/help" class="col-xs-2 pull-right" ng-class="{ here: isActive('/help')}"> <i class="fa fa-exclamation-circle"></i> </a>
+    </div>
 	
 	<main role="main" class="container">
         
-		<div ng-view></div>
+    <div ng-view></div>
 	</main>
 	
 	<footer class="container-fluid">

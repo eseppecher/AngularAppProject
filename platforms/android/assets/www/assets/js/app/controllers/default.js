@@ -5,17 +5,20 @@ myApp.controller('mainController', function($scope, localStorageService, $locati
 
 	$scope.title	= 'Homepage';
 	$scope.message	= 'home';
-	
-    $scope.isActive = function (viewLocation) {
-                 return viewLocation === $location.path();
                  
+    $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
     };
                  
     localStorageService.clearAll();
+                 
+
     //sites
     localStorageService.set('site.1','{ "id":1,"name": "Fenouillet", "couv": "fenouillet.jpg", "description": "Le spot de bloc toulonnais! Dans la foret des colines qui dominent Hyeres, le site offre de jolie bloc en gneiss bien compact. A l ombre des arbres et donc souvent humide aussi.", "tag": "#toulon #gneiss", "volume": "13"}');
     localStorageService.set('site.2','{ "id":2,"name": "Gordolasque", "couv": "gordolasque.jpg", "descritpion": "Dans la vallee de la gordolasque, la fin de la route se termine par un chaos de beaux blocs parfois haut. Le cadre magique du debut du parc du Mercantour et magique! Frais en été et froid en hiver le site et parfait pour fuire la foule et les chaleurs de la cote.", "tag": "#montagne #mercantour #bellevedere #gneiss", "volume": "4"}');
     localStorageService.set('site.3','{ "id":3,"name": "Roquebrune", "couv": "roquebrune.jpg", "description": "Inevitable depuis l autoroute, le rocher de roqueburne atire l oeil. Sur les flancs de la montagne on touve de nobreuses boules de conglomérat rouge. Faute de pouvoir équiper les falaises qui les suplombent, la quantité de bloc est impressionante et le site est en pleine expension.", "tag": "#conglomerat #ermite", "volume": "15"}');
+  
+                 
                  
     //sectors
     localStorageService.set('sector.1','{ "id":1,"name": "Squamish", "approach": "15min", "site": "1"}');
@@ -76,7 +79,8 @@ myApp.controller('mainController', function($scope, localStorageService, $locati
 
 
 
-myApp.controller('SiteListCtrl', function($scope, $location) {
+myApp.controller('SiteListCtrl', function($scope, $location, localStorageService) {
+                 
 
 	$scope.title	= 'Sites';
 	$scope.message	= 'page 1';
@@ -99,6 +103,8 @@ myApp.controller('SiteListCtrl', function($scope, $location) {
 	};
 });
 
+
+                 
 myApp.controller('SiteDetailCtrl', function($scope, $routeParams, $location, localStorageService) {
 	id = $routeParams.siteId;
 	$scope.site = localStorageService.get('site.'+ id);
@@ -226,6 +232,9 @@ myApp.controller('LineDetailCtrl', function($scope, $routeParams, $location, loc
 	$scope.line = localStorageService.get('line.'+ id);
     $scope.site = localStorageService.get('site.'+ id);
 
+    $scope.backSector = function(siteId,sectorId) {
+            $location.path('/site/' + siteId + '/sector/' + sectorId);
+    };
 	                     
 });
 

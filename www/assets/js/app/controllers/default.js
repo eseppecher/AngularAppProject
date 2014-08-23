@@ -14,67 +14,71 @@ myApp.controller('mainController', function($scope, localStorageService, $locati
                  
 
     //sites
-    localStorageService.set('site.1','{ "id":1,"name": "Fenouillet", "couv": "fenouillet.jpg", "description": "Le spot de bloc toulonnais! Dans la foret des colines qui dominent Hyeres, le site offre de jolie bloc en gneiss bien compact. A l ombre des arbres et donc souvent humide aussi.", "tag": "#toulon #gneiss", "volume": "13"}');
-    localStorageService.set('site.2','{ "id":2,"name": "Gordolasque", "couv": "gordolasque.jpg", "descritpion": "Dans la vallee de la gordolasque, la fin de la route se termine par un chaos de beaux blocs parfois haut. Le cadre magique du debut du parc du Mercantour et magique! Frais en été et froid en hiver le site et parfait pour fuire la foule et les chaleurs de la cote.", "tag": "#montagne #mercantour #bellevedere #gneiss", "volume": "4"}');
-    localStorageService.set('site.3','{ "id":3,"name": "Roquebrune", "couv": "roquebrune.jpg", "description": "Inevitable depuis l autoroute, le rocher de roqueburne atire l oeil. Sur les flancs de la montagne on touve de nobreuses boules de conglomérat rouge. Faute de pouvoir équiper les falaises qui les suplombent, la quantité de bloc est impressionante et le site est en pleine expension.", "tag": "#conglomerat #ermite", "volume": "15"}');
-  
-                 
+    localStorageService.set('site.1','{ "id":1,"name": "Fenouillet", "lat": " 43.136443", "long": "6.098854", "couv": "fenouillet.jpg", "description": "Le spot de bloc toulonnais! Dans la foret des colines qui dominent Hyeres, le site offre de jolie bloc en gneiss bien compact. A l ombre des arbres et donc souvent humide aussi.", "tag": "#toulon #gneiss", "volume": "13"}');
+    localStorageService.set('site.2','{ "id":2,"name": "Gordolasque", "lat": "44.075890", "long": "7.401487", "couv": "gordolasque.jpg", "descritpion": "Dans la vallee de la gordolasque, la fin de la route se termine par un chaos de beaux blocs parfois haut. Le cadre magique du debut du parc du Mercantour et magique! Frais en été et froid en hiver le site et parfait pour fuire la foule et les chaleurs de la cote.", "tag": "#montagne #mercantour #bellevedere #gneiss", "volume": "4"}');
+    localStorageService.set('site.3','{ "id":3,"name": "Roquebrune", "lat": "43.457493", "long": "6.597758", "couv": "roquebrune.jpg", "description": "Inevitable depuis l autoroute, le rocher de roqueburne atire l oeil. Sur les flancs de la montagne on touve de nobreuses boules de conglomérat rouge. Faute de pouvoir équiper les falaises qui les suplombent, la quantité de bloc est impressionante et le site est en pleine expension.", "tag": "#conglomerat #ermite", "volume": "15"}');
+    
+    //parkings
+    localStorageService.set('parking.1','{ "id":1, "lat": "43.135942", "long": "6.098633", "site": "1"}');
+    localStorageService.set('parking.2','{ "id":2, "lat": "43.458484", "long": "6.603060", "site": "2"}');
+    localStorageService.set('parking.3','{ "id":3, "lat": "44.073823", "long": "7.400043", "site": "3"}');
+
                  
     //sectors
-    localStorageService.set('sector.1','{ "id":1,"name": "Squamish", "approach": "15min", "site": "1"}');
-    localStorageService.set('sector.2','{ "id":2,"name": "Parking", "approach": "15min", "site": "1"}');
-    localStorageService.set('sector.3','{ "id":3,"name": "Espigoule", "approach": "15min", "site": "1"}');
-    localStorageService.set('sector.4','{ "id":4,"name": "Parking", "approach": "15min", "site": "2"}');
-    localStorageService.set('sector.5','{ "id":5,"name": "Chaos", "approach": "15min", "site": "2"}');
-    localStorageService.set('sector.6','{ "id":6,"name": "Cascade", "approach": "15min", "site": "3"}');
-    localStorageService.set('sector.7','{ "id":7,"name": "Chapelle", "approach": "15min", "site": "3"}');
+    localStorageService.set('sector.1','{ "id":1,"name": "Squamish", "coords": { "latitutde": 43.136826, "longitude": 6.096699}, "approach": "15min", "site": "1"}');
+    localStorageService.set('sector.2','{ "id":2,"name": "Parking", "coords": { "lat": 43.136145, "long": 6.099227}, "approach": "15min", "site": "1"}');
+    localStorageService.set('sector.3','{ "id":3,"name": "Espigoule", "coords": { "lat": 43.138010, "long": 6.102571}, "approach": "15min", "site": "1"}');
+    localStorageService.set('sector.4','{ "id":4,"name": "Parking", "lat": "44.074160", "long": "7.400161", "approach": "15min", "site": "2"}');
+    localStorageService.set('sector.5','{ "id":5,"name": "Chaos", "lat": "44.077724", "long": "7.401964", "approach": "15min", "site": "2"}');
+    localStorageService.set('sector.6','{ "id":6,"name": "Cascade", "lat": "43.455697", "long": "6.601392", "approach": "15min", "site": "3"}');
+    localStorageService.set('sector.7','{ "id":7,"name": "Chapelle", "lat": "43.458971", "long": "6.592596", "approach": "15min", "site": "3"}');
 
-    
+                 
     //lines Fenouilllet/Squamish
-    localStorageService.set('line.1','{ "id":1,"name": "Pose ton cul", "images": ["1.jpg", "2.jpg"], "grade": "7a", "site": "1", "sector": "1"}');
-    localStorageService.set('line.2','{ "id":2,"name": "La force tranquille", "images": ["1.jpg"], "grade": "7a+", "site": "1", "sector": "1"}');
-    localStorageService.set('line.3','{ "id":3,"name": "Put your ass", "images": ["1.jpg"], "grade": "7a+", "site": "1", "sector": "1"}');
-    localStorageService.set('line.4','{ "id":4,"name": "Lili", "grade": "7b+", "images": "1.jpg", "site": "1", "sector": "1"}');
-    localStorageService.set('line.5','{ "id":5,"name": "Orange and grey", "images": "1.jpg", "grade": "7a+", "site": "1", "sector": "1"}');
+    localStorageService.set('line.1','{ "id":1,"name": "Pose ton cul","lat": "43.136826", "long": "6.096699", "images": ["1.jpg", "2.jpg"], "grade": "7a", "site": "1", "sector": "1"}');
+    localStorageService.set('line.2','{ "id":2,"name": "La force tranquille", "lat": "43.136826", "long": "6.096699", "images": ["1.jpg"], "grade": "7a+", "site": "1", "sector": "1"}');
+    localStorageService.set('line.3','{ "id":3,"name": "Put your ass", "lat": "43.136826", "long": "6.096699", "images": ["1.jpg"], "grade": "7a+", "site": "1", "sector": "1"}');
+    localStorageService.set('line.4','{ "id":4,"name": "Lili", "lat": "43.136826", "long": "6.096699", "grade": "7b+", "images": "1.jpg", "site": "1", "sector": "1"}');
+    localStorageService.set('line.5','{ "id":5,"name": "Orange and grey", "lat": "43.136826", "long": "6.096699", "images": "1.jpg", "grade": "7a+", "site": "1", "sector": "1"}');
     
     //lines Fenouilllet/Parking
-    localStorageService.set('line.6','{ "id":6,"name": "Pulpe friction", "images": "1.jpg", "grade": "7a+", "site": "1", "sector": "2"}');
-    localStorageService.set('line.7','{ "id":7,"name": "Big traverse", "images": "1.jpg", "grade": "7a", "site": "1", "sector": "2"}');
-    localStorageService.set('line.8','{ "id":8,"name": "N33", "images": "1.jpg", "grade": "6a", "site": "1", "sector": "2"}');
-    localStorageService.set('line.9','{ "id":9,"name": "N30", "images": "1.jpg", "grade": "6b", "site": "1", "sector": "2"}');
-    localStorageService.set('line.10','{ "id":10,"name": "N32", "images": "1.jpg", "grade": "6b", "site": "1", "sector": "2"}');
+    localStorageService.set('line.6','{ "id":6,"name": "Pulpe friction", "lat": "43.136145", "long": "6.099227", "images": "1.jpg", "grade": "7a+", "site": "1", "sector": "2"}');
+    localStorageService.set('line.7','{ "id":7,"name": "Big traverse", "lat": "43.136145", "long": "6.099227", "images": "1.jpg", "grade": "7a", "site": "1", "sector": "2"}');
+    localStorageService.set('line.8','{ "id":8,"name": "N33", "lat": "43.136145", "long": "6.099227", "images": "1.jpg", "grade": "6a", "site": "1", "sector": "2"}');
+    localStorageService.set('line.9','{ "id":9,"name": "N30", "lat": "43.136145", "long": "6.099227", "images": "1.jpg", "grade": "6b", "site": "1", "sector": "2"}');
+    localStorageService.set('line.10','{ "id":10,"name": "N32", "lat": "43.136145", "long": "6.099227", "images": "1.jpg", "grade": "6b", "site": "1", "sector": "2"}');
 
     //lines Fenouilllet/Espigoule
-    localStorageService.set('line.11','{ "id":11,"name": "Le zèbre", "grade": "7b", "site": "1", "sector": "3"}');
-    localStorageService.set('line.12','{ "id":12,"name": "Le facomochère", "grade": "7a", "site": "1", "sector": "3"}');
-    localStorageService.set('line.13','{ "id":13,"name": "Lart et la technique", "grade": "7a+", "site": "1", "sector": "3"}');
+    localStorageService.set('line.11','{ "id":11,"name": "Le zèbre", "lat": "43.138010", "long": "6.102571", "grade": "7b", "site": "1", "sector": "3"}');
+    localStorageService.set('line.12','{ "id":12,"name": "Le facomochère", "lat": "43.138010", "long": "6.102571", "grade": "7a", "site": "1", "sector": "3"}');
+    localStorageService.set('line.13','{ "id":13,"name": "Lart et la technique", "lat": "43.138010", "long": "6.102571", "grade": "7a+", "site": "1", "sector": "3"}');
                  
     //lines Gordolasque/Parking
-    localStorageService.set('line.14','{ "id":14,"name": "I am not down", "grade": "7a+", "site": "2", "sector": "4"}');
-    localStorageService.set('line.15','{ "id":15,"name": "Hypo Canette", "grade": "7b+", "site": "2", "sector": "4"}');
+    localStorageService.set('line.14','{ "id":14,"name": "I am not down", "lat": "44.074160", "long": "7.400161", "grade": "7a+", "site": "2", "sector": "4"}');
+    localStorageService.set('line.15','{ "id":15,"name": "Hypo Canette", "lat": "44.074160", "long": "7.400161", "grade": "7b+", "site": "2", "sector": "4"}');
     
     //lines Gordolasque/Chaos
-    localStorageService.set('line.16','{ "id":16,"name": "Kick parade", "grade": "7a+", "site": "2", "sector": "5"}');
-    localStorageService.set('line.17','{ "id":17,"name": "Canabis street", "grade": "7c", "site": "2", "sector": "5"}');
+    localStorageService.set('line.16','{ "id":16,"name": "Kick parade", "lat": "44.077724", "long": "7.401964", "grade": "7a+", "site": "2", "sector": "5"}');
+    localStorageService.set('line.17','{ "id":17,"name": "Canabis street", "lat": "44.077724", "long": "7.401964", "grade": "7c", "site": "2", "sector": "5"}');
 
     //lines Roquebrune/Cascade
-    localStorageService.set('line.18','{ "id":18,"name": "Zion", "images": ["1.jpg", "2.jpg"], "grade": "7b", "site": "3", "sector": "6"}');
-    localStorageService.set('line.19','{ "id":19,"name": "Death in Vegas", "grade": "7b+", "site": "3", "sector": "6"}');
-    localStorageService.set('line.20','{ "id":20,"name": "Fermeture éclair", "grade": "7c", "site": "3", "sector": "6"}');
-    localStorageService.set('line.21','{ "id":21,"name": "Electric umbrella", "grade": "8a", "site": "3", "sector": "6"}');
-    localStorageService.set('line.22','{ "id":22,"name": "Lavande sauvage", "grade": "7a", "site": "3", "sector": "6"}');
-    localStorageService.set('line.23','{ "id":23,"name": "Bloc a bloc", "grade": "6c", "site": "3", "sector": "6"}');
-    localStorageService.set('line.24','{ "id":24,"name": "La force de tenebres", "grade": "6c", "site": "3", "sector": "6"}');
-    localStorageService.set('line.25','{ "id":25,"name": "Solitude", "grade": "6c+", "site": "3", "sector": "6"}');
+    localStorageService.set('line.18','{ "id":18,"name": "Zion", "lat": "43.455697", "long": "6.601392", "images": ["1.jpg", "2.jpg"], "grade": "7b", "site": "3", "sector": "6"}');
+    localStorageService.set('line.19','{ "id":19,"name": "Death in Vegas", "lat": "43.455697", "long": "6.601392", "grade": "7b+", "site": "3", "sector": "6"}');
+    localStorageService.set('line.20','{ "id":20,"name": "Fermeture éclair", "lat": "43.455697", "long": "6.601392", "grade": "7c", "site": "3", "sector": "6"}');
+    localStorageService.set('line.21','{ "id":21,"name": "Electric umbrella", "lat": "43.455697", "long": "6.601392", "grade": "8a", "site": "3", "sector": "6"}');
+    localStorageService.set('line.22','{ "id":22,"name": "Lavande sauvage", "lat": "43.455697", "long": "6.601392", "grade": "7a", "site": "3", "sector": "6"}');
+    localStorageService.set('line.23','{ "id":23,"name": "Bloc a bloc", "lat": "43.455697", "long": "6.601392", "grade": "6c", "site": "3", "sector": "6"}');
+    localStorageService.set('line.24','{ "id":24,"name": "La force de tenebres", "lat": "43.455697", "long": "6.601392", "grade": "6c", "site": "3", "sector": "6"}');
+    localStorageService.set('line.25','{ "id":25,"name": "Solitude", "lat": "43.455697", "long": "6.601392", "grade": "6c+", "site": "3", "sector": "6"}');
                  
     //lines Roquebrune/Chapelle
-    localStorageService.set('line.26','{ "id":26,"name": "La desmonta", "grade": "7b", "site": "3", "sector": "7"}');
-    localStorageService.set('line.27','{ "id":27,"name": "Nonobstant", "grade": "7b", "site": "3", "sector": "7"}');
-    localStorageService.set('line.28','{ "id":28,"name": "Chocapic", "grade": "7a+", "site": "3", "sector": "7"}');
-    localStorageService.set('line.29','{ "id":29,"name": "La trav de Comete", "grade": "7a", "site": "3", "sector": "7"}');
-    localStorageService.set('line.30','{ "id":30,"name": "Grand Bras", "grade": "7b+", "site": "3", "sector": "7"}');
-    localStorageService.set('line.31','{ "id":31,"name": "Ls Iwork", "grade": "7c", "site": "3", "sector": "7"}');
-    localStorageService.set('line.32','{ "id":32,"name": "Le tenia", "grade": "7b", "site": "3", "sector": "7"}');
+    localStorageService.set('line.26','{ "id":26,"name": "La desmonta", "lat": "43.458971", "long": "6.592596", "grade": "7b", "site": "3", "sector": "7"}');
+    localStorageService.set('line.27','{ "id":27,"name": "Nonobstant", "lat": "43.458971", "long": "6.592596", "grade": "7b", "site": "3", "sector": "7"}');
+    localStorageService.set('line.28','{ "id":28,"name": "Chocapic", "lat": "43.458971", "long": "6.592596", "grade": "7a+", "site": "3", "sector": "7"}');
+    localStorageService.set('line.29','{ "id":29,"name": "La trav de Comete", "lat": "43.458971", "long": "6.592596", "grade": "7a", "site": "3", "sector": "7"}');
+    localStorageService.set('line.30','{ "id":30,"name": "Grand Bras", "lat": "43.458971", "long": "6.592596", "grade": "7b+", "site": "3", "sector": "7"}');
+    localStorageService.set('line.31','{ "id":31,"name": "Ls Iwork", "lat": "43.458971", "long": "6.592596", "grade": "7c", "site": "3", "sector": "7"}');
+    localStorageService.set('line.32','{ "id":32,"name": "Le tenia", "lat": "43.458971", "long": "6.592596", "grade": "7b", "site": "3", "sector": "7"}');
 });
 
 
@@ -109,7 +113,7 @@ myApp.controller('SiteDetailCtrl', function($scope, $routeParams, $location, loc
 	id = $routeParams.siteId;
 	$scope.site = localStorageService.get('site.'+ id);
 	
-	/* Get child line */
+	/* Get child sector */
 	$scope.sectors = [];
 	hasNext = true;
 	i = 1;
@@ -126,12 +130,29 @@ myApp.controller('SiteDetailCtrl', function($scope, $routeParams, $location, loc
 		}
 	}
 	
+    /* Get child parkings */
+    $scope.parkings = [];
+    hasNext = true;
+    i = 1;
+    while(hasNext){
+        parking = localStorageService.get('parking.' + i);
+                 
+        if( sector.site === id ){
+            $scope.parkings.push(parking);
+        }
+                 
+        i++;
+        if(localStorageService.get('parking.' + i) === null) {
+            hasNext = false;
+        }
+    }
+                 
 	$scope.map = {
 		    center: {
-		        latitude: 45,
-		        longitude: -73
+		        latitude: $scope.site.lat,
+		        longitude: $scope.site.long
 		    },
-		    zoom: 8
+		    zoom: 16
 		};
     
     $scope.lineList = function(siteId,sectorId) {
@@ -238,13 +259,52 @@ myApp.controller('LineDetailCtrl', function($scope, $routeParams, $location, loc
 	                     
 });
 
-myApp.controller('menu3Controller', function($scope, $rootScope) {
-	$scope.title	= 'Menu 3';
-	$scope.message	= 'page 3';
-	
+myApp.controller('searchCtrl', function($scope, $location, localStorageService) {
+    $scope.title	= 'Search';
+    $scope.message	= 'En dévelopement';
+                 
+    $scope.datas = [];
+    //This should be factorize in local storage?
+    hasNext = true;
+    i = 1;
+    while(hasNext){
+        $scope.datas[i] = localStorageService.get('site.' + i);
+        $scope.datas[i].type = "site";
+        i++;
+        if(localStorageService.get('site.' + i) === null) {
+            hasNext = false;
+        }
+    }
+                 
+    hasNext = true;
+    j = 1;
+                 
+    while(hasNext){
+        $scope.datas[i] = localStorageService.get('sector.' + j);
+        $scope.datas[i].type = "sector";
+        i++;
+        j++;
+        if(localStorageService.get('sector.' + j) === null) {
+            hasNext = false;
+        }
+    }
+                 
+    hasNext = true;
+    j = 1;
+                 
+    while(hasNext){
+        $scope.datas[i] = localStorageService.get('line.' + j);
+        $scope.datas[i].type = "bloc";
+        i++;
+        j++;
+        if(localStorageService.get('line.' + j) === null) {
+            hasNext = false;
+        }
+    }
+                 
 });
 
-myApp.controller('helpController', function($scope, $rootScope) {
+myApp.controller('helpCtrl', function($scope, $rootScope) {
 	$scope.title	= 'Help';
 	$scope.message	= 'Help page';
 	

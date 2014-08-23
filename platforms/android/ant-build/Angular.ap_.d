@@ -3071,13 +3071,9 @@
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/node_modules/grunt-contrib-watch/tasks/lib/taskrunner.js \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/default.html \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/line \
-/Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/sector \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/site \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/line/detail.html \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/line/list.html \
-/Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/sector/detail.html \
-/Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/sector/list.html \
-/Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/sector/sector.html \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/site/detail.html \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/site/list.html \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/site/sector.html \
