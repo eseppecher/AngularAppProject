@@ -19,6 +19,10 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
             templateUrl: 'partials/site/sector.html',
             controller: 'SectorCtrl'
         })
+        .when('/site/:siteId/map/:sectorId', {
+            templateUrl: 'partials/site/map.html',
+            controller: 'SectorCtrl'
+            })
 		.when('/lines', {
 			templateUrl: 'partials/line/list.html',
 			controller  : 'LineListCtrl'
@@ -27,13 +31,13 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
 			templateUrl : 'partials/line/detail.html',
 			controller  : 'LineDetailCtrl'
 		})
-		.when('/menu3', {
-			templateUrl: 'partials/default.html',
-			controller  : 'menu3Controller'
-		})
+        .when('/search', {
+                    templateUrl: 'partials/search.html',
+                    controller  : 'searchCtrl'
+        })
 		.when('/help', {
 			templateUrl: 'partials/default.html',
-			controller  : 'helpController'
+			controller  : 'helpCtrl'
 		})
 		.otherwise({
 			redirectTo: '/',

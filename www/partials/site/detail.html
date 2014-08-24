@@ -28,8 +28,8 @@
 </div>
 
 <br>
-<google-map center="map.center" zoom="map.zoom">
-<markers idKey='sector.id' coords='sector.coords'>
-    </markers>
+<google-map center="map.center" zoom="map.zoom" draggable="true">
+<markers models="sectors" coords="'self'"> </markers>
+<markers models="parkings" coords="'self'"> </markers>
 </google-map>
 

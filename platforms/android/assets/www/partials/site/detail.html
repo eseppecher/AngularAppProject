@@ -27,6 +27,9 @@
     </h4>
 </div>
 
-<h3> Plan du site:  <button type="button" class="btn btn-default" > Go <i class="fa fa-car"></i>!<span></button> </h3>
-<google-map center="map.center" zoom="map.zoom"></google-map>
+<br>
+<google-map center="map.center" zoom="map.zoom" draggable="true">
+<markers models="sectors" coords="'self'"> </markers>
+<markers models="parkings" coords="'self'"> </markers>
+</google-map>
 

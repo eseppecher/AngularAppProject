@@ -1,0 +1,22 @@
+
+
+<div class="row" align="center">
+    </div><!-- /.col-lg-6 -->
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control" ng-model="searchInput">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                </span>
+                </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+<br> <br> <br>
+
+<div class="row" ng-repeat="item in datas | filter:searchInput">
+    <h4>
+        <div class="col-xs-5" ng-bind-html="item.name"> </div>
+        <div class="col-xs-5" ng-bind-html="item.type"> </div>
+    </h4>
+</div>
