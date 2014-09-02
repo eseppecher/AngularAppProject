@@ -7,7 +7,8 @@
     </div>
 </div>
 
-<h3> Description: </h3>
+<button type="button" class="btn btn-default" ng-click="lineList(site.id,'all')">Toutes les voies</button>
+
 <p> {{site.tag}} {{site.description}}</p>
 
 
@@ -28,8 +29,9 @@
 </div>
 
 <br>
+<div class="map-site">
 <google-map center="map.center" zoom="map.zoom" draggable="true">
 <markers models="sectors" coords="'self'"> </markers>
 <markers models="parkings" coords="'self'"> </markers>
 </google-map>
-
+</div>

@@ -6,6 +6,7 @@ var myApp = angular.module('myApp', [
           'google-maps'
           ]);
 
+
 myApp.config(['localStorageServiceProvider', function(localStorageServiceProvider){
 	  localStorageServiceProvider.setPrefix('bonoway');
 	  // localStorageServiceProvider.setStorageCookieDomain('example.com');

@@ -27,6 +27,7 @@
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/node_modules \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/package.json \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials \
+/Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/plugins \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/assets/css \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/assets/fonts \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/assets/js \
@@ -3069,6 +3070,8 @@
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/node_modules/grunt-contrib-watch/tasks/lib/livereload.js \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/node_modules/grunt-contrib-watch/tasks/lib/taskrun.js \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/node_modules/grunt-contrib-watch/tasks/lib/taskrunner.js \
+/Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/about.html \
+/Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/add.html \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/default.html \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/line \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/search.html \
@@ -3079,4 +3082,10 @@
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/site/list.html \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/site/map.html \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/partials/site/sector.html \
+/Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/plugins/org.apache.cordova.camera \
+/Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/plugins/org.apache.cordova.camera/www \
+/Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/Camera.js \
+/Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/CameraConstants.js \
+/Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/CameraPopoverHandle.js \
+/Users/etienne/Workspace/AngularAppProject/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/CameraPopoverOptions.js \
 /Users/etienne/Workspace/AngularAppProject/platforms/android/ant-build/AndroidManifest.xml \

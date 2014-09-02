@@ -164,8 +164,10 @@ myApp.controller('SectorCtrl', function($scope, $routeParams, $location, localSt
     id = $routeParams.siteId;
     idd = $routeParams.sectorId;
     $scope.site = localStorageService.get('site.'+ id);
-    $scope.current = localStorageService.get('sector.'+ idd);
-    $scope.currency = idd;
+    
+    if( idd == 0) { $scope.currency= ""; } // case "toutes les voies"
+    else{ $scope.currency = idd; } // case sector idd
+    
     /* Get child sector */
     $scope.sectors = [];
     hasFollow = true;
@@ -273,53 +275,96 @@ myApp.controller('LineDetailCtrl', function($scope, $routeParams, $location, loc
 	                     
 });
 
-myApp.controller('searchCtrl', function($scope, $location, localStorageService) {
-    $scope.title	= 'Search';
+
+myApp.controller('addCtrl', function($scope, $location, localStorageService) {
+   
+    $scope.title	= 'Ajout de blocs';
     $scope.message	= 'En dévelopement';
-                 
-    $scope.datas = [];
+    
+
+    $scope.sites = [];
     //This should be factorize in local storage?
     hasNext = true;
     i = 1;
     while(hasNext){
-        $scope.datas[i] = localStorageService.get('site.' + i);
-        $scope.datas[i].type = "site";
+        $scope.sites[i] = localStorageService.get('site.' + i);
+        $scope.sites[i].type = "site";
         i++;
         if(localStorageService.get('site.' + i) === null) {
             hasNext = false;
         }
     }
-                 
+    
+    $scope.sectors = [];
+    //This should be factorize in local storage?
     hasNext = true;
-    j = 1;
-                 
+    i = 1;
     while(hasNext){
-        $scope.datas[i] = localStorageService.get('sector.' + j);
-        $scope.datas[i].type = "sector";
+        $scope.sectors[i] = localStorageService.get('sector.' + i);
+        $scope.sectors[i].type = "sector";
         i++;
-        j++;
-        if(localStorageService.get('sector.' + j) === null) {
+        if(localStorageService.get('sector.' + i) === null) {
+             hasNext = false;
+        }
+    }
+
+                 $scope.myPictures = [];
+                 $scope.$watch('myPicture', function(value) {
+                               if(value) {
+                               myPictures.push(value);
+                               }
+                               }, true);
+                 
+                 
+});
+
+myApp.controller('searchCtrl', function($scope, $location, localStorageService) {
+    $scope.title	= 'Search';
+    $scope.message	= 'En dévelopement';
+                 
+    $scope.sites = [];
+    //This should be factorize in local storage?
+    hasNext = true;
+    i = 1;
+    while(hasNext){
+        $scope.sites[i] = localStorageService.get('site.' + i);
+        $scope.sites[i].type = "site";
+        i++;
+        if(localStorageService.get('site.' + i) === null) {
             hasNext = false;
         }
     }
+    //PB dans la recuperation des sectors????
+          $scope.sectors = [];
+                 hasNext = true;
+                 i = 1;
+                 while(hasNext){
+                 $scope.sectors[i] = localStorageService.get('sector.' + i);
+                 $scope.sectors[i].type = "sector";
+                 i++;
+                 if(localStorageService.get('sector.' + i) === null) {
+                 hasNext = false;
+                 }
+                 }
                  
+             
+    $scope.lines = [];
     hasNext = true;
-    j = 1;
+    i = 1;
                  
     while(hasNext){
-        $scope.datas[i] = localStorageService.get('line.' + j);
-        $scope.datas[i].type = "bloc";
+        $scope.lines[i] = localStorageService.get('line.' + i);
+        $scope.lines[i].type = "bloc";
         i++;
-        j++;
-        if(localStorageService.get('line.' + j) === null) {
+        if(localStorageService.get('line.' + i) === null) {
             hasNext = false;
         }
     }
                  
 });
 
-myApp.controller('helpCtrl', function($scope, $rootScope) {
-	$scope.title	= 'Help';
+myApp.controller('aboutCtrl', function($scope, $rootScope) {
+	$scope.title	= 'A propos';
 	$scope.message	= 'Help page';
 	
 });

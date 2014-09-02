@@ -31,13 +31,17 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
 			templateUrl : 'partials/line/detail.html',
 			controller  : 'LineDetailCtrl'
 		})
+        .when('/add', {
+            templateUrl: 'partials/add.html',
+            controller  : 'addCtrl'
+        })
         .when('/search', {
                     templateUrl: 'partials/search.html',
                     controller  : 'searchCtrl'
         })
-		.when('/help', {
-			templateUrl: 'partials/default.html',
-			controller  : 'helpCtrl'
+		.when('/about', {
+			templateUrl: 'partials/about.html',
+			controller  : 'aboutCtrl'
 		})
 		.otherwise({
 			redirectTo: '/',
