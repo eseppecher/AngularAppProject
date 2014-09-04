@@ -3,7 +3,9 @@ var myApp = angular.module('myApp', [
           'ngResource',
           'LocalStorageModule',
           'ngSanitize',
-          'google-maps'
+          'google-maps',
+           'angular-websql'
+                        
           ]);
 
 

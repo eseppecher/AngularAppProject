@@ -164,8 +164,10 @@ myApp.controller('SectorCtrl', function($scope, $routeParams, $location, localSt
     id = $routeParams.siteId;
     idd = $routeParams.sectorId;
     $scope.site = localStorageService.get('site.'+ id);
-    $scope.current = localStorageService.get('sector.'+ idd);
-    $scope.currency = idd;
+    
+    if( idd === 0) { $scope.currency= ""; } // case "toutes les voies"
+    else{ $scope.currency = idd; } // case sector idd
+    
     /* Get child sector */
     $scope.sectors = [];
     hasFollow = true;
@@ -174,7 +176,7 @@ myApp.controller('SectorCtrl', function($scope, $routeParams, $location, localSt
         sector = localStorageService.get('sector.' + j);
                  
         if( sector.site === id ){
-                 if( sector.id == idd ){
+                 if( sector.id === idd ){
                  sector.check = "selected";  
                  }
                  $scope.sectors.push(sector);
@@ -184,7 +186,7 @@ myApp.controller('SectorCtrl', function($scope, $routeParams, $location, localSt
         if(localStorageService.get('sector.' + j) === null) {
             hasFollow = false;
         }
-    };
+    }
                 
              
     /* Get child line */
@@ -263,7 +265,7 @@ myApp.controller('LineListCtrl', function($scope, $location, localStorageService
 
 myApp.controller('LineDetailCtrl', function($scope, $routeParams, $location, localStorageService) {
 	id = $routeParams.lineId;
-    idSite = $routeParams.siteId
+                 idSite = $routeParams.siteId;
 	$scope.line = localStorageService.get('line.'+ id);
     $scope.site = localStorageService.get('site.'+ id);
 
@@ -278,7 +280,8 @@ myApp.controller('addCtrl', function($scope, $location, localStorageService) {
    
     $scope.title	= 'Ajout de blocs';
     $scope.message	= 'En dévelopement';
-                 
+    
+
     $scope.sites = [];
     //This should be factorize in local storage?
     hasNext = true;
@@ -318,31 +321,24 @@ myApp.controller('addCtrl', function($scope, $location, localStorageService) {
 myApp.controller('searchCtrl', function($scope, $location, localStorageService) {
     $scope.title	= 'Search';
     $scope.message	= 'En dévelopement';
+    $scope.activeType = "all";
+    $scope.setSearchType = function (activeType) {
+                 $scope.activeType = activeType;
+    };
                  
     $scope.sites = [];
     //This should be factorize in local storage?
     hasNext = true;
     i = 1;
     while(hasNext){
-        $scope.sites[i] = localStorageService.get('site.' + i);
-        $scope.sites[i].type = "site";
+        
+        $scope.sites[i-1] = localStorageService.get('site.' + i);
+        $scope.sites[i-1].type = "site";
         i++;
         if(localStorageService.get('site.' + i) === null) {
             hasNext = false;
         }
     }
-    //PB dans la recuperation des sectors????
-          $scope.sectors = [];
-                 hasNext = true;
-                 i = 1;
-                 while(hasNext){
-                 $scope.sectors[i] = localStorageService.get('sector.' + i);
-                 $scope.sectors[i].type = "sector";
-                 i++;
-                 if(localStorageService.get('sector.' + i) === null) {
-                 hasNext = false;
-                 }
-                 }
                  
              
     $scope.lines = [];
@@ -350,14 +346,18 @@ myApp.controller('searchCtrl', function($scope, $location, localStorageService) 
     i = 1;
                  
     while(hasNext){
-        $scope.lines[i] = localStorageService.get('line.' + i);
-        $scope.lines[i].type = "bloc";
+        $scope.lines[i-1] = localStorageService.get('line.' + i);
+        currentsite = localStorageService.get('site.' + $scope.lines[i-1].site);
+        $scope.lines[i-1].sitename = currentsite.name;
+        
         i++;
         if(localStorageService.get('line.' + i) === null) {
             hasNext = false;
         }
     }
-                 
+    
+    $scope.detailSite = function(siteId) { $location.path('/site/' + siteId); };
+    $scope.detailLine = function(lineId) { $location.path('/line/' + lineId); };
 });
 
 myApp.controller('aboutCtrl', function($scope, $rootScope) {

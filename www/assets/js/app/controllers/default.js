@@ -165,7 +165,7 @@ myApp.controller('SectorCtrl', function($scope, $routeParams, $location, localSt
     idd = $routeParams.sectorId;
     $scope.site = localStorageService.get('site.'+ id);
     
-    if( idd == 0) { $scope.currency= ""; } // case "toutes les voies"
+    if( idd === 0) { $scope.currency= ""; } // case "toutes les voies"
     else{ $scope.currency = idd; } // case sector idd
     
     /* Get child sector */
@@ -176,7 +176,7 @@ myApp.controller('SectorCtrl', function($scope, $routeParams, $location, localSt
         sector = localStorageService.get('sector.' + j);
                  
         if( sector.site === id ){
-                 if( sector.id == idd ){
+                 if( sector.id === idd ){
                  sector.check = "selected";  
                  }
                  $scope.sectors.push(sector);
@@ -186,7 +186,7 @@ myApp.controller('SectorCtrl', function($scope, $routeParams, $location, localSt
         if(localStorageService.get('sector.' + j) === null) {
             hasFollow = false;
         }
-    };
+    }
                 
              
     /* Get child line */
@@ -265,7 +265,7 @@ myApp.controller('LineListCtrl', function($scope, $location, localStorageService
 
 myApp.controller('LineDetailCtrl', function($scope, $routeParams, $location, localStorageService) {
 	id = $routeParams.lineId;
-    idSite = $routeParams.siteId
+                 idSite = $routeParams.siteId;
 	$scope.line = localStorageService.get('line.'+ id);
     $scope.site = localStorageService.get('site.'+ id);
 
